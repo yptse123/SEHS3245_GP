@@ -1,0 +1,185 @@
+/* Global */
+body
+{
+    font-size: 16px;
+    background-color: #202020;
+    color: #fff;
+}
+
+.glyphicon 
+{
+    margin-right: 10px;
+}
+
+.copyright 
+{
+    text-align: center;
+    padding: 5px 0;
+}
+
+.btn
+{
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    background-image: none;
+}
+
+.btn-reset
+{
+    margin-left: 10px;
+}
+
+.modal-content 
+{
+    background-color: #242424;
+}
+
+.close, .close:focus, .close:hover
+{
+    color: #fff;
+}
+
+.invalid-feedback
+{
+    color: red;
+    display: none;
+}
+
+.ajax-loader
+{
+    max-width: 50px;
+    display: none;
+}
+
+/* Nav Bar */
+nav.navbar
+{
+    background-color: #181818;
+    border: #181818;
+    border-radius: 0;
+    color: #fff;
+}
+
+nav.navbar a
+{
+    color: #fff;
+}
+
+.nav > li > a:focus, .nav > li > a:hover, .nav .open > a, .nav .open > a:focus, .nav .open > a:hover, .dropdown-menu, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover
+{
+    background-color: #181818;
+    color: #fff;
+}
+
+nav.navbar a:not(.navbar-brand):after
+{
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+
+nav.navbar a:hover:after
+{
+    width: 100%;
+    background: #fff;
+}
+
+nav.navbar .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover 
+{
+    background-image: none;
+}
+
+nav.navbar .navbar-brand, nav.navbar .navbar-nav
+{
+    height: 80px;
+}
+
+nav.navbar .navbar-brand img, nav.navbar .nav > li
+{
+    height: 100%;
+}
+
+nav.navbar .navbar-nav > li > a
+{
+    line-height: 45px;
+}
+
+nav.navbar .navbar-toggle
+{
+    background-color: #fff;
+    margin-top: 15px;
+}
+
+nav.navbar .navbar-toggle .icon-bar
+{
+    background-color: #181818;
+}
+
+@media (max-width: 1080px)
+{
+    nav.navbar .navbar-nav > li > a
+    {
+        font-size: 14px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media (max-width: 768px)
+{
+    nav.navbar .navbar-brand img
+    {
+        height: 100%;
+    }
+
+    nav.navbar .nav > li
+    {
+        height: auto;
+    }
+
+    nav.navbar .glyphicon
+    {
+        display: none;
+    }
+
+    nav.navbar .navbar-nav
+    {
+        height: auto;
+    }
+
+    nav.navbar .navbar-nav > li > a
+    {
+        line-height: 20px;
+    }
+}
+
+/* Newsletter */
+section.newsletter-container
+{
+    background-color: #fff;
+    color: #282828;
+    text-align: center;
+    padding: 20px;
+}
+
+section.newsletter-container .newsletter-title
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+section.newsletter-container .newsletter-form-container
+{
+    margin: 10px 0;
+}
+
+section.newsletter-container .newsletter-description
+{
+    font-weight: lighter;
+}
+
+/* Login Modal */
