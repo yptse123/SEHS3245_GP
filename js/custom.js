@@ -96,17 +96,26 @@
 
             // title fade in
             $(".page-header").animate({
+
                 opacity: 1, 
                 marginLeft: '0',
+            });
+
+            // scroll to
+            $(".btn-more-container").find(".btn").click(function() {
+
+                common.scrollSlowly(document.getElementById('section-product-info').offsetTop, 500);
             });
         },
 
         slider: function() {
 
             $('.owl-carousel').owlCarousel({
+
                 loop: true,
                 margin: 0,
-                nav: false,
+                nav: true,
+                dots: false,
                 autoplay: true,
                 autoplayTimeout: 5000,
                 autoplayHoverPause: true,
@@ -146,6 +155,41 @@
                 $('button[type=submit]').show();
                 $('button[type=reset]').show();
             }
+        },
+        scrollSlowly: function(position, durationTime) 
+        {
+            // current position
+            var currentPosition = window.pageYOffset;
+            // start time
+            var startTime = null;
+            // duration time
+            if(durationTime == null) durationTime = 500;
+            // to position
+            position = +position, durationTime = +durationTime;
+
+            window.requestAnimationFrame(function step(currentTime) 
+            {
+                startTime = !startTime ? currentTime : startTime;
+                var progressTime = currentTime - startTime;
+
+                if (currentPosition < position) 
+                {
+                    window.scrollTo(0, ((position - currentPosition) * progressTime / durationTime) + currentPosition);
+                } 
+                else 
+                {
+                    window.scrollTo(0, currentPosition - ((currentPosition - position) * progressTime / durationTime));
+                }
+
+                if (progressTime < durationTime) 
+                {
+                    window.requestAnimationFrame(step);
+                } 
+                else 
+                {
+                    window.scrollTo(0, position);
+                }
+            });
         },
     }
 
