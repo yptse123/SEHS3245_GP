@@ -27,8 +27,8 @@
 					</a>
 				</li>
 				<li>
-					<a href="product-3.php">
-						<span>Product Page 3</span>
+					<a href="lamborghini.php">
+						<span>Lamborghini</span>
 					</a>
 				</li>
 			</ul>
@@ -36,7 +36,7 @@
 				<li>
 					<a href="cart.php">
 						<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-						Shopping Cart (<?php echo $_SESSION["quote"]["total_qty"] ?>)
+						Shopping Cart <span class="badge"><?php echo $_SESSION["quote"]["total_qty"] ?></span>
 					</a>
 				</li>
 				<li class="dropdown dropdown-account">

@@ -6,6 +6,11 @@ body
     color: #fff;
 }
 
+img
+{
+    width: 100%;
+}
+
 .glyphicon 
 {
     margin-right: 10px;
@@ -59,6 +64,7 @@ nav.navbar
     border: #181818;
     border-radius: 0;
     color: #fff;
+    margin-bottom: 0;
 }
 
 nav.navbar a
@@ -182,4 +188,82 @@ section.newsletter-container .newsletter-description
     font-weight: lighter;
 }
 
-/* Login Modal */
+/* Product Page */
+.product-page .product-page-header-container 
+{
+    position: relative; 
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-page .product-page-header-container::before
+{
+    content: "";
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.product-page .lamborghini-page-header-container::before
+{
+    background-image: url(../images/lamborghini/revuelto.jpg);
+}
+
+.product-page .product-page-header-container .page-header
+{
+    position: relative;
+    opacity: 0;
+    margin-left: 200px;
+    min-height: 250px;
+    border-bottom: none;
+}
+
+.product-page .product-page-content-container .product-description
+{
+    width: 100%;
+}
+
+.product-page .product-page-content-container .product-description .product-image
+{
+    margin-left: -35px;
+}
+
+.product-page .product-page-content-container .product-content
+{
+    padding: 10rem 20px;
+}
+
+.product-page .product-page-content-container .product-content .product-content-img
+{
+    margin-bottom: 20px;
+}
+
+.product-page .product-info .product-slider-container .product-slider
+{
+    list-style-type: none;
+    padding-left: 0;
+    padding-inline-start: 0;
+}
+
+@media (max-width: 768px)
+{
+    .product-page .product-page-content-container .product-description
+    {
+        margin-top: 100px;
+    }
+
+    .product-page .product-page-content-container .product-content
+    {
+        padding: 50px 10px;
+    }
+}

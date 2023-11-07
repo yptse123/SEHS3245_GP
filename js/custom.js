@@ -82,6 +82,54 @@
 		login.init();
 	}
 
+    // Product Page
+    var product = {
+
+        init: function() {
+
+            product.animation();
+
+            product.slider();
+        },
+
+        animation: function() {
+
+            // title fade in
+            $(".page-header").animate({
+                opacity: 1, 
+                marginLeft: '0',
+            });
+        },
+
+        slider: function() {
+
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive:{
+                    0:{
+                        items: 1
+                    },
+                    600:{
+                        items: 1
+                    },
+                    1000:{
+                        items: 1
+                    }
+                }
+            })
+        },
+    };
+
+    if($(".product-page").length > 0) {
+
+        product.init();
+    }
+
     var common = {
 
         ajaxLoader: function(showLoader) {
