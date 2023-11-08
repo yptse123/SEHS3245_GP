@@ -104,13 +104,13 @@
             // scroll to
             $(".btn-more-container").find(".btn").click(function() {
 
-                common.scrollSlowly(document.getElementById('section-product-info').offsetTop, 500);
+                common.scrollSlowly(document.getElementById("section-product-info").offsetTop, 500);
             });
         },
 
         slider: function() {
 
-            $('.owl-carousel').owlCarousel({
+            $(".product-slider").owlCarousel({
 
                 loop: true,
                 margin: 0,
@@ -141,21 +141,50 @@
 
     var common = {
 
+        fixNav: function() {
+
+            $(window).scroll(function(){
+                var nav = $("nav.navbar"),
+                scroll = $(window).scrollTop();
+
+                if (scroll >= 100) {
+
+                    nav.addClass("fixed");
+                    $(".btn-scroll-to-top").show();
+                }
+                else {
+
+                    nav.removeClass("fixed");
+                    $(".btn-scroll-to-top").hide();
+                }
+            });
+        },
+
+        scrollToTop: function() {
+
+            $(".btn-scroll-to-top").click(function() {
+
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                return false;
+            });
+        },
+
         ajaxLoader: function(showLoader) {
 
             if(showLoader) {
 
-                $('.ajax-loader').show();
-                $('button[type=submit]').hide();
-                $('button[type=reset]').hide();
+                $(".ajax-loader").show();
+                $("button[type=submit]").hide();
+                $("button[type=reset]").hide();
             }
             else {
 
-                $('.ajax-loader').hide();
-                $('button[type=submit]').show();
-                $('button[type=reset]').show();
+                $(".ajax-loader").hide();
+                $("button[type=submit]").show();
+                $("button[type=reset]").show();
             }
         },
+
         scrollSlowly: function(position, durationTime) 
         {
             // current position
@@ -191,6 +220,16 @@
                 }
             });
         },
+    }
+
+    if($("nav.navbar").length > 0) {
+
+        common.fixNav();
+    }
+
+    if($(".btn-scroll-to-top").length > 0) {
+
+        common.scrollToTop();
     }
 
 })(jQuery);

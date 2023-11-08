@@ -32,10 +32,13 @@
             <div class="product-content col-sm-5">
                 <img class="product-content-img" src="images/lamborghini/revuelto.png" />
                 <span class="product-description">
-                    The Revuelto is the beginning of a new era for Lamborghini, who has harnessed the power of hybridization technology to create the first HPEV (High Performance Electrified Vehicle). Responding to the need for sustainability and powerful performance, the Lamborghini Revuelto rewrites all paradigms and represents a technical masterpiece beyond anyone’s imagination. The iconic V12 engine finds a new life in this futuristic automotive masterwork that delivers unparalleled performance and driving emotions.
+                    The Revuelto honors the Lamborghini tradition and ushers in a new era even in its exterior design. While the car’s silhouette follows the iconic single center line, the sharply sculpted lines and smooth negative radiuses create a high-tech shape that puts the Revuelto unmistakably in the new generation of Lamborghini supercars. The iconic V12 is celebrated by being on full display in the rear.
                 </span>
                 <p class="btn-more-container">
-                    <a class="btn btn-primary btn-lg" href="javascript:void(0);" role="button">DISCOVER MORE</a>
+                    <a class="btn btn-primary btn-lg" href="javascript:void(0);" role="button">
+                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                        DISCOVER MORE
+                    </a>
                 </p>
             </div>
         </section>
@@ -50,9 +53,9 @@
                     </ul>
                 </div>
                 <div class="product-detail-container col-sm-offset-1 col-sm-5">
-                    <h1 class="product-name">
+                    <h2 class="product-name">
                         Lamborghini Revuelto
-                    </h1>
+                    </h2>
                     <div class="product-specification">
                         <ul class="list-group">
                             <li class="list-group-item">
@@ -66,10 +69,116 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="product-price price-deposit">
+                        <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 
+                        <span>Deposit: </span>
+                        USD$ 2,000
+                    </div>
                     <div class="product-add-to-cart">
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
                             <div class="form-group">
-                                <button type="submit" class="btn dark btn-primary btn-lg btn-add-to-cart">Add to Cart</button>
+                                <button type="submit" class="btn dark btn-primary btn-lg btn-add-to-cart">
+                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="product-accessories container" id="section-product-accessories">
+            <div class="product-accessories-container container">
+                <div class="page-header">
+                    <h1>Lamborghini <small>Accessories</small></h1>
+                </div>
+                <div class="product-accessories-item col-sm-3">
+                    <div class="item-image thumbnail">
+                        <img src="images/lamborghini/item1.jpg" />
+                    </div>
+                    <h4 class="item-name">
+                        LEGO TECHNIC LAMBORGHINI SIÁN FKP 37
+                    </h4>
+                    <h4 class="item-price">
+                        <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 
+                        USD$ 100
+                    </h4>
+                    <div class="product-add-to-cart">
+                        <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-add-to-cart">
+                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="product-accessories-item col-sm-3">
+                    <div class="item-image thumbnail">
+                        <img src="images/lamborghini/item2.jpg" />
+                    </div>
+                    <h4 class="item-name">
+                        WIRELESS MW75 HEADPHONES BY MASTER & DYNAMIC
+                    </h4>
+                    <h4 class="item-price">
+                        <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 
+                        USD$ 100
+                    </h4>
+                    <div class="product-add-to-cart">
+                        <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-add-to-cart">
+                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="product-accessories-item col-sm-3">
+                    <div class="item-image thumbnail">
+                        <img src="images/lamborghini/item3.jpg" />
+                    </div>
+                    <h4 class="item-name">
+                        WIRELESS MW08 SPORT EARBUDS FROM MASTER & DYNAMIC
+                    </h4>
+                    <h4 class="item-price">
+                        <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 
+                        USD$ 100
+                    </h4>
+                    <div class="product-add-to-cart">
+                        <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-add-to-cart">
+                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="product-accessories-item col-sm-3">
+                    <div class="item-image thumbnail">
+                        <img src="images/lamborghini/item4.jpg" />
+                    </div>
+                    <h4 class="item-name">
+                        CAP WITH SILVER-TONE SHIELD LOGO
+                    </h4>
+                    <h4 class="item-price">
+                        <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 
+                        USD$ 100
+                    </h4>
+                    <div class="product-add-to-cart">
+                        <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-add-to-cart">
+                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
+                                    Add to Cart
+                                </button>
                             </div>
                         </form>
                     </div>

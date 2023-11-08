@@ -44,6 +44,11 @@
         </div>
     </div>
 
+    <!-- Scroll to top button -->
+    <div class="btn-scroll-to-top">
+        <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span> 
+    </div>
+
     <!-- jQuery -->
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
