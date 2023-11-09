@@ -34,7 +34,7 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="cart.php">
+					<a class="nav-cart" href="cart.php">
 						<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 						Shopping Cart <span class="badge"><?php echo $_SESSION["quote"]["total_qty"] ?></span>
 					</a>
@@ -44,10 +44,10 @@
 						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 
 						<!-- If have logined token, show customer email, otherwsie show Account -->
-						<?php if(isset($_SESSION["token"]) && !empty($_SESSION["token"])): ?>
+						<?php if(isset($_SESSION["customer"]["token"]) && !empty($_SESSION["customer"]["token"])): ?>
 
 						<span class="label-customer-email">
-							<?php echo $_SESSION["customer_email"] ?>
+							<?php echo $_SESSION["customer"]["email"] ?>
 						</span> 
 
 						<?php else: ?>
@@ -61,7 +61,7 @@
 					<ul class="dropdown-menu">
 
 						<!-- If have logined token, show logout button, otherwsie show login button -->
-						<?php if(isset($_SESSION["token"]) && !empty($_SESSION["token"])): ?>
+						<?php if(isset($_SESSION["customer"]["token"]) && !empty($_SESSION["customer"]["token"])): ?>
 
 						<li class="li-btn-logout">
 							<a href="action/logout_account.php">

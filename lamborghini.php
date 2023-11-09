@@ -76,11 +76,19 @@
                     </div>
                     <div class="product-add-to-cart">
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
+                            <input type="hidden" name="product_id" value="11" />
+                            <input type="hidden" name="product_name" value="Lamborghini Revuelto" />
+                            <input type="hidden" name="sales_price" value="2000" />
+                            <input type="hidden" name="qty" value="1" />
                             <div class="form-group">
                                 <button type="submit" class="btn dark btn-primary btn-lg btn-add-to-cart">
                                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
                                     Add to Cart
                                 </button>
+                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <div class="validation-add-to-cart invalid-feedback">
+                                    Add to Cart Fail: Something wrong.
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -105,11 +113,19 @@
                     </h4>
                     <div class="product-add-to-cart">
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
+                            <input type="hidden" name="product_id" value="12" />
+                            <input type="hidden" name="product_name" value="LEGO TECHNIC LAMBORGHINI SIÁN FKP 37" />
+                            <input type="hidden" name="sales_price" value="100" />
+                            <input type="hidden" name="qty" value="1" />
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-add-to-cart">
                                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
                                     Add to Cart
                                 </button>
+                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <div class="validation-add-to-cart invalid-feedback">
+                                    Add to Cart Fail: Something wrong.
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -128,11 +144,19 @@
                     </h4>
                     <div class="product-add-to-cart">
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
+                            <input type="hidden" name="product_id" value="13" />
+                            <input type="hidden" name="product_name" value="WIRELESS MW75 HEADPHONES BY MASTER & DYNAMIC" />
+                            <input type="hidden" name="sales_price" value="100" />
+                            <input type="hidden" name="qty" value="1" />
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-add-to-cart">
                                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
                                     Add to Cart
                                 </button>
+                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <div class="validation-add-to-cart invalid-feedback">
+                                    Add to Cart Fail: Something wrong.
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -151,11 +175,19 @@
                     </h4>
                     <div class="product-add-to-cart">
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
+                            <input type="hidden" name="product_id" value="14" />
+                            <input type="hidden" name="product_name" value="WIRELESS MW08 SPORT EARBUDS FROM MASTER & DYNAMIC" />
+                            <input type="hidden" name="sales_price" value="100" />
+                            <input type="hidden" name="qty" value="1" />
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-add-to-cart">
                                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
                                     Add to Cart
                                 </button>
+                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <div class="validation-add-to-cart invalid-feedback">
+                                    Add to Cart Fail: Something wrong.
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -174,11 +206,19 @@
                     </h4>
                     <div class="product-add-to-cart">
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
+                            <input type="hidden" name="product_id" value="15" />
+                            <input type="hidden" name="product_name" value="CAP WITH SILVER-TONE SHIELD LOGO" />
+                            <input type="hidden" name="sales_price" value="100" />
+                            <input type="hidden" name="qty" value="1" />
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-add-to-cart">
                                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
                                     Add to Cart
                                 </button>
+                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <div class="validation-add-to-cart invalid-feedback">
+                                    Add to Cart Fail: Something wrong.
+                                </div>
                             </div>
                         </form>
                     </div>

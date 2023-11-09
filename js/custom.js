@@ -25,51 +25,44 @@
             // login form submit
             login._form.submit(function(e) {
 
+                var thisForm = $(this);
+
                 // use ajax http request
                 $.ajax({
 
-                    url: login._form.attr("action"),
+                    url: thisForm.attr("action"),
                     type: "POST",
-                    data: login._form.serialize(),
+                    data: thisForm.serialize(),
                     dataType: 'json',
                     beforeSend: function(responses) {
 
                         // show ajax loader before complete php logic
-                        common.ajaxLoader(true);
+                        common.ajaxLoader(true, thisForm, true);
                     },
                     success: function(responses) {
 
                         if(responses.success) {
 
-                            // // hide login modal
-                            // $("#login-modal").modal("hide");
-
-                            // // replace "Account" to customer email
-                            // $(".dropdown-account").find(".label-customer-email").html(responses.message);
-
-                            // // show logout button, hide login button
-                            // $(".dropdown-account").find(".li-btn-login").hide();
-                            // $(".dropdown-account").find(".li-btn-logout").show();
-
+                            // login success, reload page
                             location.reload();
                         }
                         else {
 
                             // error handling
-                            login._form.find("#validation-login-submit").val(responses.message);
-                            login._form.find("#validation-login-submit").show();    
+                            thisForm.find("#validation-login-submit").text(responses.message);
+                            thisForm.find("#validation-login-submit").show();
                         }
                     },
                     error: function(responses) {
 
                         // error handling
-                        login._form.find("#validation-login-submit").val("Login Fail: Something wrong.");
-                        login._form.find("#validation-login-submit").show();
+                        thisForm.find("#validation-login-submit").text("Login Fail: Something wrong.");
+                        thisForm.find("#validation-login-submit").show();
                     },
                     complete: function() {
 
                         // hide ajax loader when complete php logic
-                        common.ajaxLoader(false);
+                        common.ajaxLoader(false, thisForm, true);
                     }
                 });
             });
@@ -85,11 +78,15 @@
     // Product Page
     var product = {
 
+        _form: $(".add-to-cart-form"),
+
         init: function() {
 
             product.animation();
 
             product.slider();
+
+            product.addToCart();
         },
 
         animation: function() {
@@ -132,6 +129,74 @@
                 }
             })
         },
+
+        addToCart: function() {
+
+            // login form submit
+            product._form.submit(function(e) {
+
+                var thisForm = $(this);
+
+                // prepare add to cart success message
+                var options = {
+                    "title": "Add to Cart Success",
+                    "content": thisForm.find("input[name=product_name]").val() + " was added!",
+                    "trigger": "manual",
+                    "placement": "bottom"
+                };
+
+                thisForm.find("button[type=submit]").popover(options);
+
+                // use ajax http request
+                $.ajax({
+
+                    url: thisForm.attr("action"),
+                    type: "POST",
+                    data: thisForm.serialize(),
+                    dataType: 'json',
+                    beforeSend: function(responses) {
+
+                        // show ajax loader before complete php logic
+                        common.ajaxLoader(true, thisForm);
+                    },
+                    success: function(responses) {
+
+                        if(responses.success) {
+
+                            // show add to cart success message
+                            thisForm.find("button[type=submit]").popover("show");
+
+                            // update the total qty of cart on nav bar
+                            $(".nav-cart").find(".badge").text(responses.message);
+                        }
+                        else {
+
+                            // if customer not login yet
+                            if(responses.code == "require-login") {
+
+                                // pop up the login form
+                                $("#login-modal").modal('show');
+                            }
+
+                            // error handling
+                            thisForm.find(".validation-add-to-cart").text(responses.message);
+                            thisForm.find(".validation-add-to-cart").show();
+                        }
+                    },
+                    error: function(responses) {
+
+                        // error handling
+                        thisForm.find(".validation-add-to-cart").text("Add to Cart Fail: Something wrong.");
+                        thisForm.find(".validation-add-to-cart").show();
+                    },
+                    complete: function() {
+
+                        // hide ajax loader when complete php logic
+                        common.ajaxLoader(false, thisForm);
+                    }
+                });
+            });
+        },
     };
 
     if($(".product-page").length > 0) {
@@ -169,19 +234,27 @@
             });
         },
 
-        ajaxLoader: function(showLoader) {
+        ajaxLoader: function(showLoader, element, reset = false) {
 
             if(showLoader) {
 
-                $(".ajax-loader").show();
-                $("button[type=submit]").hide();
-                $("button[type=reset]").hide();
+                element.find(".ajax-loader").show();
+                element.find("button[type=submit]").prop("disabled", true);
+
+                if(reset) {
+
+                    element.find("button[type=reset]").prop("disabled", true);
+                }
             }
             else {
 
-                $(".ajax-loader").hide();
-                $("button[type=submit]").show();
-                $("button[type=reset]").show();
+                element.find(".ajax-loader").hide();
+                element.find("button[type=submit]").prop("disabled", false);
+
+                if(reset) {
+
+                    element.find("button[type=reset]").prop("disabled", false);
+                }
             }
         },
 

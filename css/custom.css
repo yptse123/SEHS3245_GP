@@ -118,12 +118,22 @@ footer .icon {
     display: none;
 }
 
-.btn-scroll-to-top .glyphicon{
+.btn-scroll-to-top .glyphicon {
     color: #363636;
     font-size: 40px;
     border: 1px solid #FFF;
     border-radius: 20px;
     background-color: #fff;
+}
+
+.popover-title {
+    font-weight: bold;
+    background-color: #a3ccff;
+    color: #181818;
+}
+
+.popover-content {
+    color: #181818;
 }
 
 /* Nav Bar */

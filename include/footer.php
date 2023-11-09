@@ -6,7 +6,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="login-modal">Hi <?php if(isset($_SESSION["customer_email"])) echo $_SESSION["customer_email"] ?>, Please Login Your Account</h4>
+                    <h4 class="modal-title" id="login-modal">Hi, Please Login Your Account</h4>
                 </div>
                 <div class="modal-body">
                     <form action="action/login_account.php" method="POST" id="login-form" class="form-horizontal" onsubmit="return false;">
