@@ -177,16 +177,98 @@
                         </table>
                     </div>
                     <div class="cart-total-button text-right">
-                        <a class="btn btn-primary btn-lg white" href="javascript:void(0);" role="button">
+                        <a class="btn btn-primary btn-lg white btn-checkout" href="javascript:void(0);" role="button">
                             PROCEED TO CHECKOUT
                         </a>
                     </div>
                 </div>
-                </div>
             </section>
 
-            <section class="">
-
+            <section class="cart-action col-sm-12" id="checkout-section">
+                <form action="action/place_order.php" method="POST" id="place-order-form" class="form-horizontal" onsubmit="return false;">
+                    <input type="hidden" name="id" value="<?php echo $_SESSION["quote"]["id"] ?>" />
+                    <div class="panel-group" id="checkout-accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="checkout-information">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#checkout-accordion" href="#collapse-checkout-information" aria-expanded="true" aria-controls="collapse-checkout-information"> 
+                                        Checkout Information 
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse-checkout-information" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="checkout-information">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="checkout-email">Email</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="email" id="checkout-email" class="form-control" pattern="([A-Za-z0-9][._]?)+[A-Za-z0-9]@[A-Za-z0-9]+(\.?[A-Za-z0-9]){2}\.(com?|net|org)+(\.[A-Za-z0-9]{2,4})?" placeholder="name@domain.com" value="<?php echo $_SESSION["customer"]["email"] ?>" required />
+                                        </div>
+                                        <label class="col-sm-2 control-label" for="checkout-mobile">Mobile</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="mobile" id="checkout-mobile" class="form-control" pattern="[0-9]{8}" placeholder="Mobile" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="checkout-first-name">First Name</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="first_name" id="checkout-first-name" class="form-control" placeholder="First Name" required />
+                                        </div>
+                                        <label class="col-sm-2 control-label" for="checkout-last-name">Last Name</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="last_name" id="checkout-last-name" class="form-control" placeholder="Last Name" required />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="checkout-payment">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#checkout-accordion" href="#collapse-checkout-payment" aria-expanded="false" aria-controls="collapse-checkout-payment"> 
+                                        Checkout Payment 
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse-checkout-payment" class="panel-collapse collapse" role="tabpanel" aria-labelledby="checkout-payment">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="checkout-branch">Branch<small>For Pick Up</small></label>
+                                        <div class="col-sm-4">
+                                            <select class="form-control" id="checkout-branch" name="branch">
+                                                <option value="Kowloon branch">Kowloon branch</option>
+                                                <option value="Hong Kong Island branch">Hong Kong Island branch</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="checkout-appointment">Appointment</label>
+                                        <div class="col-sm-4">
+                                            <input type="datetime-local" name="appointment_at" id="checkout-appointment" class="form-control" placeholder="Appointment" min="<?php echo date("Y-m-d")."T".date("H:i") ?>" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="checkout-payment-method">Payment Method</label>
+                                        <div class="col-sm-4 radio">
+                                            <label>
+                                                <input type="radio" name="payment_method" id="checkout-payment-method" value="Bank Transfer" checked>
+                                                Bank Transfer
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12 text-left">
+                                            <button type="submit" class="btn btn-default btn-place-order white">Place Order</button>
+                                            <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                        </div>
+                                        <div id="validation-place-order-submit" class="invalid-feedback">
+                                            Place Order: Something wrong.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </section>
 
             <?php endif; ?>

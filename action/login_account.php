@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 	$password = md5($_POST["login_password"]);
 
 	// select customers check account exist
-	$sql = "SELECT * FROM customer WHERE email = :email AND password = :password AND active = :active;";
+	$sql = "SELECT * FROM `customer` WHERE email = :email AND password = :password AND active = :active;";
     $bindData = array(
     	"email" => $email,
     	"password" => $password,
@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 		// Update Last Login Time & Token
 		$token = md5(rand(1, 100));
 
-		$sql = "UPDATE customer SET last_login_time = NOW(), token = :token WHERE id = :id;";
+		$sql = "UPDATE `customer` SET last_login_time = NOW(), token = :token WHERE id = :id;";
 		$bindData = array(
 	    	"token" => $token,
 	    	"id" => $id,

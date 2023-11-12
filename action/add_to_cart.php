@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         if($quoteId) {
 
             // check exist items first,
-            $sql = "SELECT * FROM quote_item WHERE quote_id = :quote_id AND product_id = :product_id";
+            $sql = "SELECT * FROM `quote_item` WHERE quote_id = :quote_id AND product_id = :product_id";
             $bindData = array(
                 "quote_id" => $quoteId,
                 "product_id" => $_POST["product_id"],
@@ -47,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
                 $newQty = $quoteItem["qty"] + $_POST["qty"];
 
-                $sql = "UPDATE quote_item SET qty = :qty WHERE id = :id";
+                $sql = "UPDATE `quote_item` SET qty = :qty, updated_at = NOW() WHERE id = :id";
                 $bindData = array(
                     "qty" => $newQty,
                     "id" => $quoteItem["id"],

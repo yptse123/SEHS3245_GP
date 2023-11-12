@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     foreach ($needUpdateQty as $quoteItemId => $qty) {
 
-        $sql = "UPDATE quote_item SET qty = :qty WHERE id = :id";
+        $sql = "UPDATE `quote_item` SET qty = :qty WHERE id = :id";
         $bindData = array(
             "qty" => $qty,
             "id" => $quoteItemId,

@@ -163,6 +163,10 @@ input {
     margin: 0.5rem;
 }
 
+input[type="radio"] {
+    outline: none;
+}
+
 /* Nav Bar */
 nav.navbar {
     background-color: #181818;
@@ -529,4 +533,17 @@ section.newsletter-container .newsletter-description {
 
 .cart-page .cart-total-table tr td, .cart-page .cart-total-table tr th {
     padding: 15px;
+}
+
+.cart-page .panel-default > .panel-heading {
+    background-image: -webkit-linear-gradient(top,#292929 0,#4d4d4d 100%);
+    background-image: -o-linear-gradient(top,#292929 0,#4d4d4d 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#292929),to(#4d4d4d));
+    background-image: linear-gradient(to bottom,#292929 0,#4d4d4d 100%);
+    color: #ddd;
+    font-weight: bolder;
+}
+
+.cart-page .panel-default a:focus, .cart-page .panel-default a:hover {
+    color: #ccc
 }

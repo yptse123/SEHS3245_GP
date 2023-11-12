@@ -11,6 +11,9 @@ if(session_id() == '')  {
 include_once('config.php');
 include_once('function.php');
 
+// set default timezone
+date_default_timezone_set("Asia/Hong_Kong");
+
 // Connect DB
 try {
 
@@ -28,7 +31,7 @@ if(isset($_SESSION["customer"]["token"]) && !empty($_SESSION["customer"]["token"
     // if logined, check database to find the shopping cart items
     $customerId = $_SESSION["customer"]["id"];
 
-    $sql = "SELECT * FROM quote WHERE customer_id = :customer_id AND active = :active AND is_ordered = :is_ordered;";
+    $sql = "SELECT * FROM `quote` WHERE customer_id = :customer_id AND active = :active AND is_ordered = :is_ordered;";
     $bindData = array(
         "customer_id" => $customerId,
         "active" => 1,

@@ -13,7 +13,7 @@ $result = array(
 // Check method
 if($_SERVER['REQUEST_METHOD'] === "POST") {
 
-    $sql = "SELECT * FROM coupon WHERE code = :code;";
+    $sql = "SELECT * FROM `coupon` WHERE code = :code;";
     $bindData = array(
         "code" => $_POST["coupon_code"],
     );
@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if($coupon) {
 
-        $sql = "UPDATE quote SET coupon_code = :coupon_code, discount = :discount WHERE id = :id";
+        $sql = "UPDATE `quote` SET coupon_code = :coupon_code, discount = :discount, updated_at = NOW() WHERE id = :id";
         $bindData = array(
             "coupon_code" => $_POST["coupon_code"],
             "discount" => $coupon["amount"],

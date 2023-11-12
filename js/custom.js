@@ -102,7 +102,7 @@
             // scroll to
             $(".btn-more-container").find(".btn").click(function() {
 
-                common.scrollSlowly(document.getElementById("section-product-info").offsetTop, 500);
+                common.scrollSlowly(document.getElementById("section-product-info").offsetTop - 100, 500);
             });
         },
 
@@ -212,6 +212,7 @@
         _removeForm: $(".remove-item-form"),
         _couponForm: $("#cart-coupon-form"),
         _updateForm: $("#update-cart-form"),
+        _orderForm: $("#place-order-form"),
 
         init: function() {
 
@@ -224,6 +225,8 @@
             cart.adjustQty();
 
             cart.updateCart();
+
+            cart.placeOrder();
         },
 
         animation: function() {
@@ -233,6 +236,12 @@
 
                 opacity: 1, 
                 marginLeft: '0',
+            });
+
+            // scroll to
+            $(".btn-checkout").click(function() {
+
+                common.scrollSlowly(document.getElementById("checkout-section").offsetTop - 100, 500);
             });
         },
 
@@ -350,7 +359,7 @@
                     error: function(responses) {
 
                         // error handling
-                        thisForm.find("#validation-cart-coupon-submit").text("Apply Coupon: Something wrong.");
+                        thisForm.find("#validation-cart-coupon-submit").text("Apply Coupon Fail: Something wrong.");
                         thisForm.find("#validation-cart-coupon-submit").show();
                     },
                     complete: function() {
@@ -402,6 +411,16 @@
 
                 var thisForm = $(this);
 
+                // prepare update cart success message
+                var options = {
+                    "title": "Update Cart Success",
+                    "content": "Update Cart Success!",
+                    "trigger": "manual",
+                    "placement": "right"
+                };
+
+                thisForm.find("button[type=submit]").popover(options);
+
                 // use ajax http request
                 $.ajax({
 
@@ -427,8 +446,9 @@
                             $(".cart-total-table").find(".discount").text(responses.message.discount);
                             $(".cart-total-table").find(".grand-total").text(responses.message.grand_total);
 
-                            // show remove item success alert
+                            // show update success alert
                             $(".alert-success").text("Cart was updated successfully!").fadeIn("slow");
+                            thisForm.find("button[type=submit]").popover("show");
                         }
                         else {
 
@@ -440,8 +460,58 @@
                     error: function(responses) {
 
                         // error handling
-                        thisForm.find("#validation-update-cart-submit").text("Update Cart: Something wrong.");
+                        thisForm.find("#validation-update-cart-submit").text("Update Cart Fail: Something wrong.");
                         thisForm.find("#validation-update-cart-submit").show();
+                    },
+                    complete: function() {
+
+                        // hide ajax loader when complete php logic
+                        common.ajaxLoader(false, thisForm);
+                    }
+                });
+            });
+        },
+
+        placeOrder: function() {
+
+            // update cart form submit
+            cart._orderForm.submit(function(e) {
+
+                var thisForm = $(this);
+
+                // use ajax http request
+                $.ajax({
+
+                    url: thisForm.attr("action"),
+                    type: "POST",
+                    data: thisForm.serialize(),
+                    dataType: 'json',
+                    beforeSend: function(responses) {
+
+                        // show ajax loader before complete php logic
+                        common.ajaxLoader(true, thisForm);
+                        thisForm.find("#validation-place-order-submit").hide();
+                    },
+                    success: function(responses) {
+
+                        if(responses.success) {
+
+                            if(responses.message == "success") {
+                                window.location.href = "success.php";
+                            }
+                        }
+                        else {
+
+                            // error handling
+                            thisForm.find("#validation-place-order-submit").text(responses.message);
+                            thisForm.find("#validation-place-order-submit").show();
+                        }
+                    },
+                    error: function(responses) {
+
+                        // error handling
+                        thisForm.find("#validation-place-order-submit").text("Place Order Fail: Something wrong.");
+                        thisForm.find("#validation-place-order-submit").show();
                     },
                     complete: function() {
 
@@ -596,7 +666,7 @@
                     error: function(responses) {
 
                         // error handling
-                        thisForm.find("#validation-newsletter-submit").text("Subscribe Newsletter: Something wrong.");
+                        thisForm.find("#validation-newsletter-submit").text("Subscribe Newsletter Fail: Something wrong.");
                         thisForm.find("#validation-newsletter-submit").show();
                     },
                     complete: function() {

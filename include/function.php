@@ -107,7 +107,7 @@ function deleteQuery($pdo, $sql, $bindData = array()) {
  */
 function getQuoteById($pdo, $quoteId) {
 
-    $sql = "SELECT * FROM quote WHERE id = :id;";
+    $sql = "SELECT * FROM `quote` WHERE id = :id;";
     $bindData = array(
         "id" => $quoteId,
     );
@@ -123,7 +123,7 @@ function getQuoteById($pdo, $quoteId) {
  */
 function getQuoteItemById($pdo, $quoteItemId) {
 
-    $sql = "SELECT * FROM quote_item WHERE id = :id;";
+    $sql = "SELECT * FROM `quote_item` WHERE id = :id;";
     $bindData = array(
         "id" => $quoteItemId,
     );
@@ -139,7 +139,7 @@ function getQuoteItemById($pdo, $quoteItemId) {
  */
 function getQuoteItemByQuoteId($pdo, $quoteId) {
 
-    $sql = "SELECT * FROM quote_item WHERE quote_id = :quote_id ORDER BY product_id ASC;";
+    $sql = "SELECT * FROM `quote_item` WHERE quote_id = :quote_id ORDER BY product_id ASC;";
     $bindData = array(
         "quote_id" => $quoteId,
     );
@@ -156,14 +156,14 @@ function getQuoteItemByQuoteId($pdo, $quoteId) {
 function recalculateQuote($pdo, $quoteId) {
 
     // get quote info
-    $sql = "SELECT * FROM quote WHERE id = :id;";
+    $sql = "SELECT * FROM `quote` WHERE id = :id;";
     $bindData = array(
         "id" => $quoteId,
     );
     $quote = fetchOne($pdo, $sql, $bindData);
 
     // get all quote items
-    $sql = "SELECT * FROM quote_item WHERE quote_id = :quote_id;";
+    $sql = "SELECT * FROM `quote_item` WHERE quote_id = :quote_id;";
     $bindData = array(
     	"quote_id" => $quoteId,
     );
@@ -177,7 +177,7 @@ function recalculateQuote($pdo, $quoteId) {
         $subtotal += $quoteItem["sales_price"] * $quoteItem["qty"];
     }
 
-    $sql = "UPDATE quote SET total_qty = :total_qty, subtotal = :subtotal, discount = :discount, grand_total = :grand_total, updated_at = NOW() WHERE id = :id;";
+    $sql = "UPDATE `quote` SET total_qty = :total_qty, subtotal = :subtotal, discount = :discount, grand_total = :grand_total, updated_at = NOW() WHERE id = :id;";
     $bindData = array(
     	"total_qty" => $totalQty,
     	"subtotal" => $subtotal,
