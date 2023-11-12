@@ -11,13 +11,13 @@ $result = array(
 );
 
 // Check method
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
+if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // Check Customer Login
     if(isset($_SESSION["customer"]["token"]) && !empty($_SESSION["customer"]["token"])) {
 
         // check total qty in session, if = 0, create a new quote
-        if($_SESSION["quote"]["total_qty"] == 0) {
+        if(!isset($_SESSION["quote"]["id"])) {
 
             $sql = "INSERT INTO `quote`(`customer_id`) VALUES (:customer_id);";
             $bindData = array(
@@ -57,11 +57,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             // else, insert a new quote item
             else {
 
-                $sql = "INSERT INTO `quote_item`(`quote_id`, `product_id`, `product_name`, `qty`, `sales_price`) VALUES (:quote_id, :product_id, :product_name, :qty, :sales_price);";
+                $sql = "INSERT INTO `quote_item`(`quote_id`, `product_id`, `product_name`, `product_url`, `product_image_url`, `qty`, `sales_price`) VALUES (:quote_id, :product_id, :product_name, :product_url, :product_image_url, :qty, :sales_price);";
                 $bindData = array(
                     "quote_id" => $quoteId,
                     "product_id" => $_POST["product_id"],
                     "product_name" => $_POST["product_name"],
+                    "product_url" => $_POST["product_url"],
+                    "product_image_url" => $_POST["product_image_url"],
                     "qty" => $_POST["qty"],
                     "sales_price" => $_POST["sales_price"],
                 );
@@ -69,13 +71,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             // re-calculate the quote total qty, total price, etc
-            $totalQty = recalculateQuote($pdo, $quoteId);
+            $updateData = recalculateQuote($pdo, $quoteId);
 
-            // set tht quote id, total qty into session
-            $_SESSION["quote"]["total_qty"] = $totalQty;
-            $_SESSION["quote"]["id"] = $quoteId;
-
-            $result["message"] = $totalQty;
+            $result["message"] = $updateData["total_qty"];
         }
     }
     // Not Login yet, return fail

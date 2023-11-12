@@ -38,6 +38,7 @@
 
                         // show ajax loader before complete php logic
                         common.ajaxLoader(true, thisForm, true);
+                        thisForm.find("#validation-login-submit").hide();
                     },
                     success: function(responses) {
 
@@ -132,7 +133,7 @@
 
         addToCart: function() {
 
-            // login form submit
+            // add to cart form submit
             product._form.submit(function(e) {
 
                 var thisForm = $(this);
@@ -158,6 +159,7 @@
 
                         // show ajax loader before complete php logic
                         common.ajaxLoader(true, thisForm);
+                        thisForm.find(".validation-add-to-cart").hide();
                     },
                     success: function(responses) {
 
@@ -204,7 +206,261 @@
         product.init();
     }
 
+    // Cart Page
+    var cart = {
+
+        _removeForm: $(".remove-item-form"),
+        _couponForm: $("#cart-coupon-form"),
+        _updateForm: $("#update-cart-form"),
+
+        init: function() {
+
+            cart.animation();
+
+            cart.removeItem();
+
+            cart.applyCoupon();
+
+            cart.adjustQty();
+
+            cart.updateCart();
+        },
+
+        animation: function() {
+
+            // title fade in
+            $(".page-header").animate({
+
+                opacity: 1, 
+                marginLeft: '0',
+            });
+        },
+
+        removeItem: function() {
+
+            // remove item form submit
+            cart._removeForm.submit(function(e) {
+
+                var thisForm = $(this);
+
+                // prepare remove item confirm message
+                var message = "Are you sure to remove this item ?";
+
+                if (confirm(message) == true) {
+
+                    // use ajax http request
+                    $.ajax({
+
+                        url: thisForm.attr("action"),
+                        type: "POST",
+                        data: thisForm.serialize(),
+                        dataType: 'json',
+                        beforeSend: function(responses) {
+
+                            // show ajax loader before complete php logic
+                            common.ajaxLoader(true, thisForm);
+                            thisForm.find(".validation-remove-item").hide();
+                        },
+                        success: function(responses) {
+
+                            if(responses.success) {
+
+                                if(responses.message > 0) {
+
+                                    // success
+                                    thisForm.parent().parent().fadeOut("slow");
+
+                                    // update the total qty of cart on nav bar
+                                    $(".nav-cart").find(".badge").text(responses.message);
+
+                                    // show remove item success alert
+                                    $(".alert-success").text(responses.product + " was removed").fadeIn("slow");
+                                }
+                                else {
+
+                                    // total qty empty, referesh the page
+                                    location.reload();  
+                                }
+                            }
+                            else {
+
+                                // error handling
+                                thisForm.find(".validation-remove-item").text(responses.message);
+                                thisForm.find(".validation-remove-item").show();
+                            }
+                        },
+                        error: function(responses) {
+
+                            // error handling
+                            thisForm.find(".validation-remove-item").text("Add to Cart Fail: Something wrong.");
+                            thisForm.find(".validation-remove-item").show();
+                        },
+                        complete: function() {
+
+                            // hide ajax loader when complete php logic
+                            common.ajaxLoader(false, thisForm);
+                        }
+                    });
+                }
+            });
+        },
+
+        applyCoupon: function() {
+
+            // remove item form submit
+            cart._couponForm.submit(function(e) {
+
+                var thisForm = $(this);
+
+                // use ajax http request
+                $.ajax({
+
+                    url: thisForm.attr("action"),
+                    type: "POST",
+                    data: thisForm.serialize(),
+                    dataType: 'json',
+                    beforeSend: function(responses) {
+
+                        // show ajax loader before complete php logic
+                        common.ajaxLoader(true, thisForm);
+                        thisForm.find("#validation-cart-coupon-submit").hide();
+                    },
+                    success: function(responses) {
+
+                        if(responses.success) {
+
+                            // update the total qty of cart on nav bar
+                            $(".nav-cart").find(".badge").text(responses.message.total_qty);
+
+                            // update cart total table
+                            $(".cart-total-table").find(".subtotal").text(responses.message.subtotal);
+                            $(".cart-total-table").find(".discount").text(responses.message.discount);
+                            $(".cart-total-table").find(".grand-total").text(responses.message.grand_total);
+
+                            // show remove item success alert
+                            $(".alert-success").text("Coupon was applied!").fadeIn("slow");
+                        }
+                        else {
+
+                            // error handling
+                            thisForm.find("#validation-cart-coupon-submit").text(responses.message);
+                            thisForm.find("#validation-cart-coupon-submit").show();
+                        }
+                    },
+                    error: function(responses) {
+
+                        // error handling
+                        thisForm.find("#validation-cart-coupon-submit").text("Apply Coupon: Something wrong.");
+                        thisForm.find("#validation-cart-coupon-submit").show();
+                    },
+                    complete: function() {
+
+                        // hide ajax loader when complete php logic
+                        common.ajaxLoader(false, thisForm);
+                    }
+                });
+            });
+        },
+
+        adjustQty: function() {
+
+            $(".cart-table").find(".qty-inc").click(function() {
+
+                var itemPrice = parseFloat($(this).parent().parent().find(".item-price").text());
+                var oldQty = parseInt($(this).parent().find(".update-item-qty").val());
+                var newQty = oldQty + 1;
+                var newSubtotal = itemPrice * newQty;
+
+                $(this).parent().find(".update-item-qty").val(newQty);
+                $(this).parent().find(".item-qty").text(newQty);
+                $(this).parent().parent().find(".item-subtotal").text(newSubtotal);
+            });
+
+            $(".cart-table").find(".qty-dec").click(function() {
+
+                var itemPrice = parseFloat($(this).parent().parent().find(".item-price").text());
+                var oldQty = parseInt($(this).parent().find(".update-item-qty").val());
+                var minQty = parseInt($(this).parent().find(".update-item-qty").attr("min"));
+                var newQty = oldQty - 1;
+
+                if(newQty <= minQty) {
+                    newQty = minQty;
+                }
+
+                var newSubtotal = itemPrice * newQty;
+
+                $(this).parent().find(".update-item-qty").val(newQty);
+                $(this).parent().find(".item-qty").text(newQty);
+                $(this).parent().parent().find(".item-subtotal").text(newSubtotal);
+            });
+        },
+
+        updateCart: function() {
+
+            // update cart form submit
+            cart._updateForm.submit(function(e) {
+
+                var thisForm = $(this);
+
+                // use ajax http request
+                $.ajax({
+
+                    url: thisForm.attr("action"),
+                    type: "POST",
+                    data: thisForm.serialize(),
+                    dataType: 'json',
+                    beforeSend: function(responses) {
+
+                        // show ajax loader before complete php logic
+                        common.ajaxLoader(true, thisForm);
+                        thisForm.find("#validation-update-cart-submit").hide();
+                    },
+                    success: function(responses) {
+
+                        if(responses.success) {
+
+                            // update the total qty of cart on nav bar
+                            $(".nav-cart").find(".badge").text(responses.message.total_qty);
+
+                            // update cart total table
+                            $(".cart-total-table").find(".subtotal").text(responses.message.subtotal);
+                            $(".cart-total-table").find(".discount").text(responses.message.discount);
+                            $(".cart-total-table").find(".grand-total").text(responses.message.grand_total);
+
+                            // show remove item success alert
+                            $(".alert-success").text("Cart was updated successfully!").fadeIn("slow");
+                        }
+                        else {
+
+                            // error handling
+                            thisForm.find("#validation-update-cart-submit").text(responses.message);
+                            thisForm.find("#validation-update-cart-submit").show();
+                        }
+                    },
+                    error: function(responses) {
+
+                        // error handling
+                        thisForm.find("#validation-update-cart-submit").text("Update Cart: Something wrong.");
+                        thisForm.find("#validation-update-cart-submit").show();
+                    },
+                    complete: function() {
+
+                        // hide ajax loader when complete php logic
+                        common.ajaxLoader(false, thisForm);
+                    }
+                });
+            });
+        },
+    };
+
+    if($(".cart-page").length > 0) {
+
+        cart.init();
+    }
+
     var common = {
+
+        _newletterForm: $("#newsletter-form"),
 
         fixNav: function() {
 
@@ -258,8 +514,7 @@
             }
         },
 
-        scrollSlowly: function(position, durationTime) 
-        {
+        scrollSlowly: function(position, durationTime) {
             // current position
             var currentPosition = window.pageYOffset;
             // start time
@@ -293,6 +548,65 @@
                 }
             });
         },
+        
+        subscribeNewsletter: function() {
+
+            // subscribe newsletter form submit
+            common._newletterForm.submit(function(e) {
+
+                var thisForm = $(this);
+
+                // prepare subscribe newsletter success message
+                var options = {
+                    "title": "Subscribe Newsletter Success",
+                    "content": "Subscribe Newsletter Success!",
+                    "trigger": "manual",
+                    "placement": "right"
+                };
+
+                thisForm.find("button[type=submit]").popover(options);
+
+                // use ajax http request
+                $.ajax({
+
+                    url: thisForm.attr("action"),
+                    type: "POST",
+                    data: thisForm.serialize(),
+                    dataType: 'json',
+                    beforeSend: function(responses) {
+
+                        // show ajax loader before complete php logic
+                        common.ajaxLoader(true, thisForm);
+                        thisForm.find("#validation-newsletter-submit").hide();
+                    },
+                    success: function(responses) {
+
+                        if(responses.success) {
+
+                            // show add to cart success message
+                            thisForm.find("button[type=submit]").popover("show");
+                        }
+                        else {
+
+                            // error handling
+                            thisForm.find("#validation-newsletter-submit").text(responses.message);
+                            thisForm.find("#validation-newsletter-submit").show();
+                        }
+                    },
+                    error: function(responses) {
+
+                        // error handling
+                        thisForm.find("#validation-newsletter-submit").text("Subscribe Newsletter: Something wrong.");
+                        thisForm.find("#validation-newsletter-submit").show();
+                    },
+                    complete: function() {
+
+                        // hide ajax loader when complete php logic
+                        common.ajaxLoader(false, thisForm);
+                    }
+                });
+            });
+        },
     }
 
     if($("nav.navbar").length > 0) {
@@ -303,6 +617,11 @@
     if($(".btn-scroll-to-top").length > 0) {
 
         common.scrollToTop();
+    }
+
+    if($("#newsletter-form").length > 0) {
+
+        common.subscribeNewsletter();
     }
 
 })(jQuery);

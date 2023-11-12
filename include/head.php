@@ -28,13 +28,14 @@ if(isset($_SESSION["customer"]["token"]) && !empty($_SESSION["customer"]["token"
     // if logined, check database to find the shopping cart items
     $customerId = $_SESSION["customer"]["id"];
 
-    $sql = "SELECT * FROM quote WHERE customer_id = :customer_id AND active = :active;";
+    $sql = "SELECT * FROM quote WHERE customer_id = :customer_id AND active = :active AND is_ordered = :is_ordered;";
     $bindData = array(
         "customer_id" => $customerId,
         "active" => 1,
+        "is_ordered" => 0,
     );
     $quote = fetchOne($pdo, $sql, $bindData);
-    
+
     $_SESSION["quote"]["total_qty"] = 0;
 
     if($quote) {

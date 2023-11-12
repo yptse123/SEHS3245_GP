@@ -10,7 +10,7 @@ $result = array(
 );
 
 // Check method
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
+if($_SERVER['REQUEST_METHOD'] === "POST") {
 
 	$email = $_POST["login_email"];
 	$password = md5($_POST["login_password"]);
