@@ -16,19 +16,36 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     // Check Customer Login
     if(isset($_SESSION["customer"]["token"]) && !empty($_SESSION["customer"]["token"])) {
 
+        $createQuote = false;
+
         // check total qty in session, if = 0, create a new quote
         if(!isset($_SESSION["quote"]["id"])) {
+
+            $createQuote = true;
+        }
+        // else, get quote from session
+        else {
+
+            // get quote info
+            $quote = getQuoteById($pdo, $_SESSION["quote"]["id"]);
+
+            if(!$quote) {
+
+                $createQuote = true;
+            }
+            else {
+
+                $quoteId = $_SESSION["quote"]["id"];
+            }
+        }
+
+        if($createQuote) {
 
             $sql = "INSERT INTO `quote`(`customer_id`) VALUES (:customer_id);";
             $bindData = array(
                 "customer_id" => $_SESSION["customer"]["id"],
             );
             $quoteId = insertQuery($pdo, $sql, $bindData);
-        }
-        // else, get quote from session
-        else {
-
-            $quoteId = $_SESSION["quote"]["id"];
         }
 
         // insert quote items

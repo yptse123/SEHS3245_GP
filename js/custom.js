@@ -528,6 +528,30 @@
         cart.init();
     }
 
+    // Success Page
+    var success = {
+
+        init: function() {
+
+            success.animation();
+        },
+
+        animation: function() {
+
+            // title fade in
+            $(".page-header").animate({
+
+                opacity: 1, 
+                marginLeft: '0',
+            });
+        },
+    };
+
+    if($(".success-page").length > 0) {
+
+        success.init();
+    }
+
     var common = {
 
         _newletterForm: $("#newsletter-form"),

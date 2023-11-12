@@ -245,8 +245,13 @@ nav.navbar .navbar-toggle .icon-bar {
 @media (max-width: 1080px) {
     nav.navbar .navbar-nav > li > a {
         font-size: 14px;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    
+    nav.navbar .navbar-brand,
+    nav.navbar .navbar-nav {
+        height: 60px;
     }
 }
 
@@ -546,4 +551,27 @@ section.newsletter-container .newsletter-description {
 
 .cart-page .panel-default a:focus, .cart-page .panel-default a:hover {
     color: #ccc
+}
+
+/* Success Page */
+.success-page .success-page-header-container, .success-page .success-page-content-container {
+    background-color: #fff;
+    color: #202020;;
+}
+
+.success-page .success-page-header-container .page-header {
+    margin-left: 200px;
+}
+
+.success-page section.newsletter-container {
+    background-color: #282828;
+    color: #fff;
+}
+
+.success-page .order-info {
+    margin-top: 20px;
+}
+
+.success-page .list-group-item {
+    margin: 0;
 }

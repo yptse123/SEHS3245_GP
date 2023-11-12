@@ -73,6 +73,9 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         $_SESSION["order"]["id"] = $orderId;
         $_SESSION["order"]["increment_id"] = $orderNumber;
 
+        // unset quote info in session
+        unset($_SESSION["quote"]);
+
         $result["message"] = "success";
     }
 }
