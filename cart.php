@@ -96,7 +96,7 @@
                                 <button type="submit" class="btn btn-primary btn-remove-item">
                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 
                                 </button>
-                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <img src="images/ajax-loader.gif" class="ajax-loader">
                                 <div class="validation-remove-item invalid-feedback">
                                     Remove Item Fail: Something wrong.
                                 </div>
@@ -116,7 +116,7 @@
                         <button type="submit" class="btn btn-primary dark btn-update-cart">
                             Update Cart
                         </button>
-                        <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                        <img src="images/ajax-loader.gif" class="ajax-loader">
                         <div id="validation-update-cart-submit" class="invalid-feedback">
                             Update Cart Fail: Something wrong.
                         </div>
@@ -146,7 +146,7 @@
                             <div class="form-group">
                                 <div class="col-sm-12 text-left">
                                     <button type="submit" class="btn btn-default btn-cart-coupon dark">Apply Coupon</button>
-                                    <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                    <img src="images/ajax-loader.gif" class="ajax-loader">
                                 </div>
                                 <div id="validation-cart-coupon-submit" class="invalid-feedback">
                                     Apply Coupon: Something wrong.
@@ -258,7 +258,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-12 text-left">
                                             <button type="submit" class="btn btn-default btn-place-order white">PLACE ORDER</button>
-                                            <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                            <img src="images/ajax-loader.gif" class="ajax-loader">
                                         </div>
                                         <div id="validation-place-order-submit" class="invalid-feedback">
                                             Place Order: Something wrong.

@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-8">
                                 <button type="submit" class="btn btn-default btn-login">Sign in</button>
-                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <img src="images/ajax-loader.gif" class="ajax-loader">
                                 <button type="reset" class="btn btn-default btn-reset">Clear</button>
                             </div>
                             <div id="validation-login-submit" class="invalid-feedback col-sm-offset-4">

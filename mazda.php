@@ -87,7 +87,7 @@
                                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
                                     Add to Cart
                                 </button>
-                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <img src="images/ajax-loader.gif" class="ajax-loader">
                                 <div class="validation-add-to-cart invalid-feedback">
                                     Add to Cart Fail: Something wrong.
                                 </div>
@@ -126,7 +126,7 @@
                                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
                                     Add to Cart
                                 </button>
-                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <img src="images/ajax-loader.gif" class="ajax-loader">
                                 <div class="validation-add-to-cart invalid-feedback">
                                     Add to Cart Fail: Something wrong.
                                 </div>
@@ -159,7 +159,7 @@
                                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
                                     Add to Cart
                                 </button>
-                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <img src="images/ajax-loader.gif" class="ajax-loader">
                                 <div class="validation-add-to-cart invalid-feedback">
                                     Add to Cart Fail: Something wrong.
                                 </div>
@@ -192,7 +192,7 @@
                                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
                                     Add to Cart
                                 </button>
-                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <img src="images/ajax-loader.gif" class="ajax-loader">
                                 <div class="validation-add-to-cart invalid-feedback">
                                     Add to Cart Fail: Something wrong.
                                 </div>
@@ -225,7 +225,7 @@
                                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
                                     Add to Cart
                                 </button>
-                                <img src="images/ajax-loader-black.gif" class="ajax-loader">
+                                <img src="images/ajax-loader.gif" class="ajax-loader">
                                 <div class="validation-add-to-cart invalid-feedback">
                                     Add to Cart Fail: Something wrong.
                                 </div>
