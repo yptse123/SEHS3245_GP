@@ -17,13 +17,13 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li>
-					<a href="product-1.php">
-						<span>Product Page 1</span>
+					<a href="mazda.php">
+						<span>Mazda</span>
 					</a>
 				</li>
 				<li>
-					<a href="product-2.php">
-						<span>Product Page 2</span>
+					<a href="mclaren.php">
+						<span>Mclaren</span>
 					</a>
 				</li>
 				<li>

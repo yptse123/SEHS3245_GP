@@ -167,6 +167,10 @@ input[type="radio"] {
     outline: none;
 }
 
+.h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, .h4 .small, .h4 small, .h5 .small, .h5 small, .h6 .small, .h6 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small, h4 .small, h4 small, h5 .small, h5 small, h6 .small, h6 small {
+    color: #ebebeb;
+}
+
 /* Nav Bar */
 nav.navbar {
     background-color: #181818;
@@ -323,6 +327,14 @@ section.newsletter-container .newsletter-description {
 
 .product-page .lamborghini-page-header-container::before {
     background-image: url(../images/lamborghini/revuelto.jpg);
+}
+
+.product-page .mazda-page-header-container::before {
+    background-image: url(../images/mazda/mazda-1.jpg);
+}
+
+.product-page .mclaren-page-header-container::before {
+    background-image: url(../images/mclaren/All_car.webp);
 }
 
 .product-page .product-page-header-container .page-header {

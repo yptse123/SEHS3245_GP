@@ -232,7 +232,7 @@
                             <div id="collapse-checkout-payment" class="panel-collapse collapse" role="tabpanel" aria-labelledby="checkout-payment">
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="checkout-branch">Branch<small>For Pick Up</small></label>
+                                        <label class="col-sm-2 control-label" for="checkout-branch">Branch <small>For Pick Up</small></label>
                                         <div class="col-sm-4">
                                             <select class="form-control" id="checkout-branch" name="branch">
                                                 <option value="Kowloon branch">Kowloon branch</option>
@@ -257,7 +257,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12 text-left">
-                                            <button type="submit" class="btn btn-default btn-place-order white">Place Order</button>
+                                            <button type="submit" class="btn btn-default btn-place-order white">PLACE ORDER</button>
                                             <img src="images/ajax-loader-black.gif" class="ajax-loader">
                                         </div>
                                         <div id="validation-place-order-submit" class="invalid-feedback">
