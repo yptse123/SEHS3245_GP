@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
                 $newQty = $quoteItem["qty"] + $_POST["qty"];
 
-                $sql = "UPDATE `quote_item` SET qty = :qty, updated_at = NOW() WHERE id = :id";
+                $sql = "UPDATE `quote_item` SET qty = :qty WHERE id = :id";
                 $bindData = array(
                     "qty" => $newQty,
                     "id" => $quoteItem["id"],

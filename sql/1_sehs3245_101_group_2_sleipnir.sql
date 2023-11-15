@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 -- 資料庫: `sehs3245_101_group_2_sleipnir`
 --
 
+CREATE DATABASE `sehs3245_101_group_2_sleipnir`;
+
 -- --------------------------------------------------------
 
 --
