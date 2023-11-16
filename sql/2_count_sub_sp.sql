@@ -5,7 +5,7 @@ DELIMITER $$
 USE `sehs3245_101_group_2_sleipnir`$$
 CREATE PROCEDURE `count_all_subs` ()
 BEGIN
-	SELECT count(*) as count FROM `sehs3245_101_group_2_sleipnir`.order;
+	SELECT count(*) as count FROM `sehs3245_101_group_2_sleipnir`.newsletter;
 END$$
 
 DELIMITER ;
