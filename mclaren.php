@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="product-content col-sm-5">
-                <img class="product-content-img" src="images/McLaren/mclaren-new-name-planetf1.png" />
+                <img class="product-content-img" src="images/mcLaren/mclaren-new-name-planetf1.png" />
                 <span class="product-description">
                     <b><i>McLaren's</i></b> slogan is <i><u>"Progress, Vision, Achievement, and Innovation."</u></i> The characteristics that have shaped our first sixty years will also shape our future. History is not a static moment in time. They create it each and every day. Every gramme spared, every second gained. Every McLaren that is equipped with a component from their 60th Anniversary Options will also proudly display an exquisite, brushed aluminum Dedication Plaque, which has an exquisitely debossed and memorably evocative "Speedy Kiwi" in McLaren Orange, as a way to commemorate history in motion. A well thought-out reminder of our exciting, long-lasting heritage. each and every time you enter the cockpit.
                 </span>

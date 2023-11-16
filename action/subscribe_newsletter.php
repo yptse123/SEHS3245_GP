@@ -21,6 +21,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         "email" => $_POST["newsletter-email"],
     );
     $quoteId = insertQuery($pdo, $sql, $bindData);
+
+    // get total subscribe count
+    $count = countSubs($pdo);
+    $result["message"] = $count;
 }
 else {
 

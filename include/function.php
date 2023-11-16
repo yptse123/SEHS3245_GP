@@ -197,6 +197,21 @@ function recalculateQuote($pdo, $quoteId) {
 }
 
 /**
+ * @param  object $pdo    php pdo db connection
+ * @return int  $count    count subscribe
+ */
+function countSubs($pdo) {
+
+    $sql = "CALL count_all_subs()";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(); 
+    $count = $stmt->fetchAll(PDO::FETCH_ASSOC)[0]["count"];
+
+    return $count;
+}
+
+/**
  * @author ozkanozcan
  * @link   https://gist.github.com/ozkanozcan/3378054
  * @param  string $val string need to remove XXSid

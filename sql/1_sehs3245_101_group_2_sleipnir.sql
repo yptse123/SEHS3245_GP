@@ -22,6 +22,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE DATABASE `sehs3245_101_group_2_sleipnir`;
+USE `sehs3245_101_group_2_sleipnir`;
 
 -- --------------------------------------------------------
 

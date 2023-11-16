@@ -679,6 +679,11 @@
 
                             // show add to cart success message
                             thisForm.find("button[type=submit]").popover("show");
+
+                            // show sub count
+                            var respText = responses.message + " people Subscribed";
+                            thisForm.find("#complete-newsletter-submit").text(respText);
+                            thisForm.find("#complete-newsletter-submit").show();
                         }
                         else {
 

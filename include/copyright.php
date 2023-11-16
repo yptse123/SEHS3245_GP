@@ -18,6 +18,7 @@
                 <div class="newsletter-description">
                     Subscribe our newsletter and get the deals !
                 </div>
+                <div id="complete-newsletter-submit"></div>
             </form>
         </div>
     </section>
