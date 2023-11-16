@@ -375,19 +375,19 @@
 
             $(".cart-table").find(".qty-inc").click(function() {
 
-                var itemPrice = parseFloat($(this).parent().parent().find(".item-price").text());
+                var itemPrice = parseFloat($(this).parent().parent().find(".item-price-row").text());
                 var oldQty = parseInt($(this).parent().find(".update-item-qty").val());
                 var newQty = oldQty + 1;
                 var newSubtotal = itemPrice * newQty;
 
                 $(this).parent().find(".update-item-qty").val(newQty);
                 $(this).parent().find(".item-qty").text(newQty);
-                $(this).parent().parent().find(".item-subtotal").text(newSubtotal);
+                $(this).parent().parent().find(".item-subtotal-row").text(newSubtotal);
             });
 
             $(".cart-table").find(".qty-dec").click(function() {
 
-                var itemPrice = parseFloat($(this).parent().parent().find(".item-price").text());
+                var itemPrice = parseFloat($(this).parent().parent().find(".item-price-row").text());
                 var oldQty = parseInt($(this).parent().find(".update-item-qty").val());
                 var minQty = parseInt($(this).parent().find(".update-item-qty").attr("min"));
                 var newQty = oldQty - 1;
@@ -400,7 +400,7 @@
 
                 $(this).parent().find(".update-item-qty").val(newQty);
                 $(this).parent().find(".item-qty").text(newQty);
-                $(this).parent().parent().find(".item-subtotal").text(newSubtotal);
+                $(this).parent().parent().find(".item-subtotal-row").text(newSubtotal);
             });
         },
 

@@ -529,6 +529,10 @@ section.newsletter-container .newsletter-description {
     outline: none;
 }
 
+.cart-page .cart-table .item-qty-row {
+    white-space: nowrap;
+}
+
 .cart-page .cart-action, .cart-page .cart-bottom {
     margin-bottom: 50px;
 }

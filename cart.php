@@ -82,14 +82,14 @@
                                 <?php echo $quoteItem["product_name"] ?>
                             </a>
                         </td>
-                        <td class="item-price"><?php echo $quoteItem["sales_price"] ?></td>
-                        <td>
+                        <td class="item-price-row"><?php echo $quoteItem["sales_price"] ?></td>
+                        <td class="item-qty-row">
                             <a href="javascript:void(0);" class="qty-dec">-</a>
                             <input type="hidden" class="update-item-qty" name="qty[<?php echo $quoteItem["id"] ?>]" min="1" value="<?php echo $quoteItem["qty"] ?>" form="update-cart-form" />
                             <span class="item-qty"><?php echo $quoteItem["qty"] ?></span>
                             <a href="javascript:void(0);" class="qty-inc">+</a>
                         </td>
-                        <td class="item-subtotal"><?php echo $quoteItem["sales_price"]*$quoteItem["qty"] ?></td>
+                        <td class="item-subtotal-row"><?php echo $quoteItem["sales_price"]*$quoteItem["qty"] ?></td>
                         <td>
                             <form action="action/remove_item.php" method="POST" class="form-horizontal remove-item-form" onsubmit="return false;">
                                 <input type="hidden" name="id" value="<?php echo $quoteItem["id"] ?>" />
