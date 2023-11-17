@@ -10,15 +10,17 @@
     <?php include_once('include/header.php') ?>
 
 </head>
-<body>
+<body class="home-page">
     
     <?php include_once('include/nav.php') ?>
 
-    <!-- 同學仔可以由呢度開始打code -->
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
+    <div class="home-page-content-container">
 
-    <!-- 同學仔呢度code完結 -->
+        <section class="banner">
+            <img src="images/banner.jpg" />
+        </section>
+
+    </div>
 
     <?php include_once('include/copyright.php') ?>
 
