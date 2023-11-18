@@ -334,7 +334,7 @@ section.newsletter-container .newsletter-description {
 }
 
 .product-page .mclaren-page-header-container::before {
-    background-image: url(../images/mcLaren/All_car.webp);
+    background-image: url(../images/mclaren/All_car.webp);
 }
 
 .product-page .product-page-header-container .page-header {
@@ -590,4 +590,89 @@ section.newsletter-container .newsletter-description {
 
 .success-page .list-group-item {
     margin: 0;
+}
+
+/* Home Page */
+.home-page .home-page-header-container {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page .home-page-header-container::before {
+    content: "";
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url(../images/banner.jpg);
+}
+
+.home-page .home-page-header-container .page-header {
+    position: relative;
+    opacity: 0;
+    margin-left: 200px;
+    min-height: 250px;
+    border-bottom: none;
+}
+
+.home-page .home-page-content-container {
+    background-image: url(../images/plain-grey-gradient-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 50px;
+    color: #282828;
+}
+
+.home-page .home-page-content-container .information .infor-item .infor-title .big-char {
+    font-size: 5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.home-page .home-page-content-container .information .infor-item .infor-content {
+    line-height: 2;
+}
+
+.home-page .home-page-content-container .information .owl-theme .owl-dots .owl-dot span, .home-page .home-page-content-container .information .owl-theme .owl-dots .owl-dot span {
+    background-color: #181818;
+}
+
+.home-page .home-page-content-container .information .owl-theme .owl-dots .owl-dot.active span, .home-page .home-page-content-container .information .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: #ccc;
+}
+
+.home-page .home-page-product-container .product-content {
+    padding: 100px 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-page .home-page-product-container .mazda-product {
+    background-image: url(../images/homeitem1.jpg);
+}
+
+.home-page .home-page-product-container .lamborghini-product {
+    background-image: url(../images/homeitem2.jpg);
+}
+
+.home-page .home-page-product-container .mclaren-product {
+    background-image: url(../images/homeitem3.jpg);
+}
+
+@media (max-width: 768px) {
+    .home-page .home-page-header-container::before {
+        background-position: -27rem;
+    }
 }

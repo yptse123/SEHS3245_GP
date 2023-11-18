@@ -552,6 +552,57 @@
         success.init();
     }
 
+    // Home Page
+    var home = {
+
+        init: function() {
+
+            home.animation();
+
+            home.slider();
+        },
+
+        animation: function() {
+
+            // title fade in
+            $(".page-header").animate({
+
+                opacity: 1, 
+                marginLeft: '0',
+            });
+        },
+
+        slider: function() {
+
+            $(".home-slider").owlCarousel({
+
+                loop: true,
+                margin: 0,
+                nav: false,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive:{
+                    0:{
+                        items: 1
+                    },
+                    600:{
+                        items: 1
+                    },
+                    1000:{
+                        items: 1
+                    }
+                }
+            })
+        },
+    };
+
+    if($(".home-page").length > 0) {
+
+        home.init();
+    }
+
     var common = {
 
         _newletterForm: $("#newsletter-form"),

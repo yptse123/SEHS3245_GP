@@ -28,12 +28,21 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
             "id" => $_POST["id"],
         );
         $rowCount = updateQuery($pdo, $sql, $bindData);
-
-        // re-calculate the quote total qty, total price, etc
-        $updateData = recalculateQuote($pdo, $_POST["id"]);
-
-        $result["message"] = $updateData;
     }
+    else {
+
+        $sql = "UPDATE `quote` SET coupon_code = NULL, discount = :discount, updated_at = NOW() WHERE id = :id";
+        $bindData = array(
+            "discount" => 0,
+            "id" => $_POST["id"],
+        );
+        $rowCount = updateQuery($pdo, $sql, $bindData);
+    }
+
+    // re-calculate the quote total qty, total price, etc
+    $updateData = recalculateQuote($pdo, $_POST["id"]);
+
+    $result["message"] = $updateData;
 }
 else {
 
