@@ -27,8 +27,6 @@
 <html lang="en">
 <head>
     <title>Thank You Page | Sleipnir</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
 
     <?php include_once('include/header.php') ?>
 

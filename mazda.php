@@ -4,8 +4,6 @@
 <html lang="en">
 <head>
     <title>Mazda | Sleipnir</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
 
     <?php include_once('include/header.php') ?>
 
