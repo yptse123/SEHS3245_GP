@@ -255,14 +255,11 @@ nav.navbar .navbar-toggle .icon-bar {
     
     nav.navbar .navbar-brand,
     nav.navbar .navbar-nav {
-        height: 60px;
+        max-width: 300px;
     }
 }
 
 @media (max-width: 768px) {
-    nav.navbar .navbar-brand img {
-        height: 100%;
-    }
 
     nav.navbar .nav > li {
         height: auto;
@@ -673,6 +670,10 @@ section.newsletter-container .newsletter-description {
 
 @media (max-width: 768px) {
     .home-page .home-page-header-container::before {
-        background-position: -27rem;
+        background-position: 30%;
+    }
+
+    .home-page .home-page-content-container {
+        padding: 20px 10px;
     }
 }
