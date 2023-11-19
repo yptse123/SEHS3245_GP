@@ -609,6 +609,7 @@
         home.init();
     }
 
+    // Common Function
     var common = {
 
         _newletterForm: $("#newsletter-form"),
