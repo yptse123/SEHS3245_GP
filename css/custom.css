@@ -275,6 +275,7 @@ nav.navbar .navbar-toggle .icon-bar {
 
     nav.navbar .navbar-nav > li > a {
         line-height: 20px;
+        margin-left: 15px;
     }
 }
 
