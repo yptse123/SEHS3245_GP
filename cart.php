@@ -82,14 +82,14 @@
                                 <?php echo $quoteItem["product_name"] ?>
                             </a>
                         </td>
-                        <td class="item-price-row"><?php echo $quoteItem["sales_price"] ?></td>
+                        <td class="item-price-row"><?php echo toCurrency($quoteItem["sales_price"]) ?></td>
                         <td class="item-qty-row">
                             <a href="javascript:void(0);" class="qty-dec">-</a>
                             <input type="hidden" class="update-item-qty" name="qty[<?php echo $quoteItem["id"] ?>]" min="1" value="<?php echo $quoteItem["qty"] ?>" form="update-cart-form" />
                             <span class="item-qty"><?php echo $quoteItem["qty"] ?></span>
                             <a href="javascript:void(0);" class="qty-inc">+</a>
                         </td>
-                        <td class="item-subtotal-row"><?php echo $quoteItem["sales_price"]*$quoteItem["qty"] ?></td>
+                        <td class="item-subtotal-row"><?php echo toCurrency($quoteItem["sales_price"]*$quoteItem["qty"]) ?></td>
                         <td>
                             <form action="action/remove_item.php" method="POST" class="form-horizontal remove-item-form" onsubmit="return false;">
                                 <input type="hidden" name="id" value="<?php echo $quoteItem["id"] ?>" />
@@ -160,18 +160,18 @@
                         <table class="table">
                             <tr>
                                 <td>Subtotal</td>
-                                <td class="subtotal text-right"><?php echo $quote["subtotal"] ?></td>
+                                <td class="subtotal text-right"><?php echo toCurrency($quote["subtotal"]) ?></td>
                             </tr>
                             <tr>
                                 <td>Discount</td>
-                                <td class="discount text-right"><?php echo $quote["discount"] ?></td>
+                                <td class="discount text-right"><?php echo toCurrency($quote["discount"]) ?></td>
                             </tr>
                             <tr>
                                 <td>
                                     <h3>Grand Total (USD)</h3>
                                 </td>
                                 <td class="text-right">
-                                    <h3 class="grand-total"><?php echo $quote["grand_total"] ?></h3>
+                                    <h3 class="grand-total"><?php echo toCurrency($quote["grand_total"]) ?></h3>
                                 </td>
                             </tr>
                         </table>
@@ -216,6 +216,11 @@
                                         <label class="col-sm-2 control-label" for="checkout-last-name">Last Name</label>
                                         <div class="col-sm-4">
                                             <input type="text" name="last_name" id="checkout-last-name" class="form-control" placeholder="Last Name" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12 text-left">
+                                            <button type="button" class="btn btn-default btn-next white">NEXT</button>
                                         </div>
                                     </div>
                                 </div>

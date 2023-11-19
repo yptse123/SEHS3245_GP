@@ -211,6 +211,11 @@ function countSubs($pdo) {
     return $count;
 }
 
+function toCurrency($val, $digit = 2, $point = ".", $separator = ",") {
+    
+    return number_format((float)$val, $digit, $point, $separator);
+}
+
 /**
  * @author ozkanozcan
  * @link   https://gist.github.com/ozkanozcan/3378054
