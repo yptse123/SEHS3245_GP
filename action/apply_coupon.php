@@ -33,6 +33,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         $updateData = recalculateQuote($pdo, $_POST["id"]);
 
         $result["message"] = $updateData;
+    } else {
+
+        $result["success"] = false;
+        $result["message"] = "Coupon Code Not Found";
     }
 }
 else {
