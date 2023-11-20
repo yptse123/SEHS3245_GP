@@ -342,9 +342,9 @@
                             $(".nav-cart").find(".badge").text(responses.message.total_qty);
 
                             // update cart total table
-                            $(".cart-total-table").find(".subtotal").text(responses.message.subtotal);
-                            $(".cart-total-table").find(".discount").text(responses.message.discount);
-                            $(".cart-total-table").find(".grand-total").text(responses.message.grand_total);
+                            $(".cart-total-table").find(".subtotal").text(common.toCurrency(responses.message.subtotal));
+                            $(".cart-total-table").find(".discount").text(common.toCurrency(responses.message.discount));
+                            $(".cart-total-table").find(".grand-total").text(common.toCurrency(responses.message.grand_total));
 
                             // show remove item success alert
                             $(".alert-success").text("Coupon was applied!").fadeIn("slow");
@@ -375,19 +375,19 @@
 
             $(".cart-table").find(".qty-inc").click(function() {
 
-                var itemPrice = parseFloat($(this).parent().parent().find(".item-price-row").text());
+                var itemPrice = parseFloat($(this).parent().parent().find(".item-price-row").text().replace(/,/g, ""));
                 var oldQty = parseInt($(this).parent().find(".update-item-qty").val());
                 var newQty = oldQty + 1;
                 var newSubtotal = itemPrice * newQty;
 
                 $(this).parent().find(".update-item-qty").val(newQty);
                 $(this).parent().find(".item-qty").text(newQty);
-                $(this).parent().parent().find(".item-subtotal-row").text(newSubtotal);
+                $(this).parent().parent().find(".item-subtotal-row").text(common.toCurrency(newSubtotal));
             });
 
             $(".cart-table").find(".qty-dec").click(function() {
 
-                var itemPrice = parseFloat($(this).parent().parent().find(".item-price-row").text());
+                var itemPrice = parseFloat($(this).parent().parent().find(".item-price-row").text().replace(/,/g, ""));
                 var oldQty = parseInt($(this).parent().find(".update-item-qty").val());
                 var minQty = parseInt($(this).parent().find(".update-item-qty").attr("min"));
                 var newQty = oldQty - 1;
@@ -400,7 +400,7 @@
 
                 $(this).parent().find(".update-item-qty").val(newQty);
                 $(this).parent().find(".item-qty").text(newQty);
-                $(this).parent().parent().find(".item-subtotal-row").text(newSubtotal);
+                $(this).parent().parent().find(".item-subtotal-row").text(common.toCurrency(newSubtotal));
             });
         },
 
@@ -442,9 +442,9 @@
                             $(".nav-cart").find(".badge").text(responses.message.total_qty);
 
                             // update cart total table
-                            $(".cart-total-table").find(".subtotal").text(responses.message.subtotal);
-                            $(".cart-total-table").find(".discount").text(responses.message.discount);
-                            $(".cart-total-table").find(".grand-total").text(responses.message.grand_total);
+                            $(".cart-total-table").find(".subtotal").text(common.toCurrency(responses.message.subtotal));
+                            $(".cart-total-table").find(".discount").text(common.toCurrency(responses.message.discount));
+                            $(".cart-total-table").find(".grand-total").text(common.toCurrency(responses.message.grand_total));
 
                             // show update success alert
                             $(".alert-success").text("Cart was updated successfully!").fadeIn("slow");
@@ -473,6 +473,12 @@
         },
 
         placeOrder: function() {
+
+            // go next step
+            $(".btn-next").click(function () {
+
+                $("#checkout-payment").find("a").trigger("click");
+            });
 
             // update cart form submit
             cart._orderForm.submit(function(e) {
@@ -552,6 +558,58 @@
         success.init();
     }
 
+    // Home Page
+    var home = {
+
+        init: function() {
+
+            home.animation();
+
+            home.slider();
+        },
+
+        animation: function() {
+
+            // title fade in
+            $(".page-header").animate({
+
+                opacity: 1, 
+                marginLeft: '0',
+            });
+        },
+
+        slider: function() {
+
+            $(".home-slider").owlCarousel({
+
+                loop: true,
+                margin: 0,
+                nav: false,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive:{
+                    0:{
+                        items: 1
+                    },
+                    600:{
+                        items: 1
+                    },
+                    1000:{
+                        items: 1
+                    }
+                }
+            })
+        },
+    };
+
+    if($(".home-page").length > 0) {
+
+        home.init();
+    }
+
+    // Common Function
     var common = {
 
         _newletterForm: $("#newsletter-form"),
@@ -705,6 +763,11 @@
                     }
                 });
             });
+        },
+
+        toCurrency: function(value) {
+
+            return value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         },
     }
 

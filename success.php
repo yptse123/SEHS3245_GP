@@ -27,8 +27,6 @@
 <html lang="en">
 <head>
     <title>Thank You Page | Sleipnir</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
 
     <?php include_once('include/header.php') ?>
 
@@ -129,11 +127,11 @@
                                     </div>
                                     <div class="col-sm-2">
                                         <strong class="visible-xs">Price</strong>
-                                        <?php echo $orderItem["sales_price"] ?>
+                                        <?php echo toCurrency($orderItem["sales_price"]) ?>
                                     </div>
                                     <div class="col-sm-2">
                                         <strong class="visible-xs">Subtotal</strong>
-                                        <?php echo $orderItem["sales_price"] * $orderItem["qty"] ?>
+                                        <?php echo toCurrency($orderItem["sales_price"] * $orderItem["qty"]) ?>
                                     </div>
                                 </li>
                                 <?php endforeach; ?>
@@ -146,17 +144,17 @@
                             <ul class="list-group">
                                 <li class="list-group-item row">
                                     <div class="col-sm-12">
-                                        <strong>Order Subtotal</strong>: <?php echo $order["subtotal"] ?>
+                                        <strong>Order Subtotal</strong>: <?php echo toCurrency($order["subtotal"]) ?>
                                     </div>
                                 </li>
                                 <li class="list-group-item row">
                                     <div class="col-sm-12">
-                                        <strong>Order Discount</strong>: <?php echo $order["discount"] ?>
+                                        <strong>Order Discount</strong>: <?php echo toCurrency($order["discount"]) ?>
                                     </div>
                                 </li>
                                 <li class="list-group-item row">
                                     <div class="col-sm-12">
-                                        <h4><strong>Order Grand Total</strong>: <?php echo $order["grand_total"] ?></h4>
+                                        <h4><strong>Order Grand Total</strong>: <?php echo toCurrency($order["grand_total"]) ?></h4>
                                     </div>
                                 </li>
                             </ul>

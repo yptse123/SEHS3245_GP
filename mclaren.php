@@ -4,8 +4,6 @@
 <html lang="en">
 <head>
     <title>Mclaren | Sleipnir</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
 
     <?php include_once('include/header.php') ?>
 
@@ -26,11 +24,11 @@
         <section class="product-description container">
             <div class="product-image-container col-sm-7">
                 <div class="product-image">
-                    <image src="images/mcLaren/McLaren_60th.png" />
+                    <image src="images/mclaren/McLaren_60th.png" />
                 </div>
             </div>
             <div class="product-content col-sm-5">
-                <img class="product-content-img" src="images/mcLaren/mclaren-new-name-planetf1.png" />
+                <img class="product-content-img" src="images/mclaren/mclaren-new-name-planetf1.png" />
                 <span class="product-description">
                     <b><i>McLaren's</i></b> slogan is <i><u>"Progress, Vision, Achievement, and Innovation."</u></i> The characteristics that have shaped our first sixty years will also shape our future. History is not a static moment in time. They create it each and every day. Every gramme spared, every second gained. Every McLaren that is equipped with a component from their 60th Anniversary Options will also proudly display an exquisite, brushed aluminum Dedication Plaque, which has an exquisitely debossed and memorably evocative "Speedy Kiwi" in McLaren Orange, as a way to commemorate history in motion. A well thought-out reminder of our exciting, long-lasting heritage. each and every time you enter the cockpit.
                 </span>
@@ -46,10 +44,10 @@
             <div class="container">
                 <div class="product-slider-container col-sm-6">
                     <ul class="owl-carousel owl-theme product-slider">
-                        <li><img src="images/mcLaren/01.jpg" /></li>
-                        <li><img src="images/mcLaren/02.jpg" /></li>
-                        <li><img src="images/mcLaren/03.jpeg" /></li>
-                        <li><img src="images/mcLaren/04.jpeg" /></li>
+                        <li><img src="images/mclaren/01.jpg" /></li>
+                        <li><img src="images/mclaren/02.jpg" /></li>
+                        <li><img src="images/mclaren/03.jpeg" /></li>
+                        <li><img src="images/mclaren/04.jpeg" /></li>
                     </ul>
                 </div>
                 <div class="product-detail-container col-sm-offset-1 col-sm-5">
@@ -81,8 +79,8 @@
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
                             <input type="hidden" name="product_id" value="6" />
                             <input type="hidden" name="product_name" value="McLaren 750S" />
-                            <input type="hidden" name="product_url" value="mcLaren.php#section-product-info" />
-                            <input type="hidden" name="product_image_url" value="images/mcLaren/01.jpg" />
+                            <input type="hidden" name="product_url" value="mclaren.php#section-product-info" />
+                            <input type="hidden" name="product_image_url" value="images/mclaren/01.jpg" />
                             <input type="hidden" name="sales_price" value="2000" />
                             <input type="hidden" name="qty" value="1" />
                             <div class="form-group">
@@ -107,7 +105,7 @@
                 </div>
                 <div class="product-accessories-item text-center col-sm-3" id="product-id-7">
                     <div class="item-image thumbnail">
-                        <img src="images/mcLaren/item1.jpg" />
+                        <img src="images/mclaren/item1.jpg" />
                     </div>
                     <h4 class="item-name">
                         McLaren Speed Champion LEGO
@@ -120,8 +118,8 @@
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
                             <input type="hidden" name="product_id" value="7" />
                             <input type="hidden" name="product_name" value="McLaren - McLaren Speed Champion LEGO" />
-                            <input type="hidden" name="product_url" value="mcLaren.php#product-id-7" />
-                            <input type="hidden" name="product_image_url" value="images/mcLaren/item1.jpg" />
+                            <input type="hidden" name="product_url" value="mclaren.php#product-id-7" />
+                            <input type="hidden" name="product_image_url" value="images/mclaren/item1.jpg" />
                             <input type="hidden" name="sales_price" value="100" />
                             <input type="hidden" name="qty" value="1" />
                             <div class="form-group">
@@ -140,7 +138,7 @@
 
                 <div class="product-accessories-item text-center col-sm-3" id="product-id-8">
                     <div class="item-image thumbnail">
-                        <img src="images/mcLaren/item2.jpg" />
+                        <img src="images/mclaren/item2.jpg" />
                     </div>
                     <h4 class="item-name">
                         McLaren Renault New Era 9FORTY Essentials Black Baseball Hat
@@ -153,8 +151,8 @@
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
                             <input type="hidden" name="product_id" value="8" />
                             <input type="hidden" name="product_name" value="McLaren - McLaren Renault New Era 9FORTY Essentials Black Baseball Hat" />
-                            <input type="hidden" name="product_url" value="mcLaren.php#product-id-8" />
-                            <input type="hidden" name="product_image_url" value="images/mcLaren/item2.jpg" />
+                            <input type="hidden" name="product_url" value="mclaren.php#product-id-8" />
+                            <input type="hidden" name="product_image_url" value="images/mclaren/item2.jpg" />
                             <input type="hidden" name="sales_price" value="100" />
                             <input type="hidden" name="qty" value="1" />
                             <div class="form-group">
@@ -173,7 +171,7 @@
 
                 <div class="product-accessories-item text-center col-sm-3" id="product-id-9">
                     <div class="item-image thumbnail">
-                        <img src="images/mcLaren/item3.jpg" />
+                        <img src="images/mclaren/item3.jpg" />
                     </div>
                     <h4 class="item-name">
                         McLaren 2023 Team Men Zipper Jacket Coat F1 New Season Racing Team Hoodie Spring Autumn Casual Women Sweatshirt
@@ -186,8 +184,8 @@
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
                             <input type="hidden" name="product_id" value="9" />
                             <input type="hidden" name="product_name" value="McLaren - McLaren 2023 Team Men Zipper Jacket Coat F1 New Season Racing Team Hoodie Spring Autumn Casual Women Sweatshirt" />
-                            <input type="hidden" name="product_url" value="mcLaren.php#product-id-9" />
-                            <input type="hidden" name="product_image_url" value="images/mcLaren/item3.jpg" />
+                            <input type="hidden" name="product_url" value="mclaren.php#product-id-9" />
+                            <input type="hidden" name="product_image_url" value="images/mclaren/item3.jpg" />
                             <input type="hidden" name="sales_price" value="100" />
                             <input type="hidden" name="qty" value="1" />
                             <div class="form-group">
@@ -206,7 +204,7 @@
 
                 <div class="product-accessories-item text-center col-sm-3" id="product-id-10">
                     <div class="item-image thumbnail">
-                        <img src="images/mcLaren/item4.jpg" />
+                        <img src="images/mclaren/item4.jpg" />
                     </div>
                     <h4 class="item-name">
                         Castore McLaren 2023 Kids Lando Norris Driver T-Shirt
@@ -219,8 +217,8 @@
                         <form action="action/add_to_cart.php" method="POST" class="form-horizontal add-to-cart-form" onsubmit="return false;">
                             <input type="hidden" name="product_id" value="10" />
                             <input type="hidden" name="product_name" value="McLaren - Castore McLaren 2023 Kids Lando Norris Driver T-Shirt" />
-                            <input type="hidden" name="product_url" value="mcLaren.php#product-id-10" />
-                            <input type="hidden" name="product_image_url" value="images/mcLaren/item4.jpg" />
+                            <input type="hidden" name="product_url" value="mclaren.php#product-id-10" />
+                            <input type="hidden" name="product_image_url" value="images/mclaren/item4.jpg" />
                             <input type="hidden" name="sales_price" value="100" />
                             <input type="hidden" name="qty" value="1" />
                             <div class="form-group">

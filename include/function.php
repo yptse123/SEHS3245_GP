@@ -212,9 +212,18 @@ function countSubs($pdo) {
 }
 
 /**
+ * @param  int/float $val    
+ * @return float     convert to currency format
+ */
+function toCurrency($val, $digit = 2, $point = ".", $separator = ",") {
+    
+    return number_format((float)$val, $digit, $point, $separator);
+}
+
+/**
  * @author ozkanozcan
  * @link   https://gist.github.com/ozkanozcan/3378054
- * @param  string $val string need to remove XXSid
+ * @param  string $val string need to remove XXS
  * @return string $val string of after remove xss
  */
 function removeXSS($val) {
