@@ -15,7 +15,7 @@
     <div class="home-page-header-container">
         <div class="container">
             <div class="page-header text-center">
-                <h1>Sleipnir</small></h1>
+                <!-- <h1>Sleipnir</small></h1> -->
             </div>
         </div>
     </div>
