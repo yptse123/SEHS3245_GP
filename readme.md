@@ -1,8 +1,8 @@
 1. Place SEHS3245_GP folder into C:\xampp\htdocs
 
-2. browser run: http://localhost/SEHS3245_GP/
+2. Update sqls, first run 1_sehs3245_101_group_2_sleipnir.sql and then 2_count_sub_sp.sql
 
-3. To use sqls, first run 1_sehs3245_101_group_2_sleipnir.sql and then 2_count_sub_sp.sql
+3. browser run: http://localhost/SEHS3245_GP/
 
 -------------------------------------------------------------------
 
