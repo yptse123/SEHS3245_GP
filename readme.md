@@ -1,15 +1,15 @@
-1. 將整個SEHS3245_GP folder放在C:\xampp\htdocs
+1. Place SEHS3245_GP folder into C:\xampp\htdocs
 
-2. browser 運行: http://localhost/SEHS3245_GP/
+2. browser run: http://localhost/SEHS3245_GP/
 
-3. To use sqls, first run supercars db create and then the other three sqls (todo data create)
+3. To use sqls, first run 1_sehs3245_101_group_2_sleipnir.sql and then 2_count_sub_sp.sql
 
 -------------------------------------------------------------------
 
-index.php = introduction page ==> Martin
-product-1.php ==> Shek
-product-2.php ==> Shek
-product-3.php 
+index.php = introduction page
+mazda.php = product 1
+mclaren.php = product 2
+lamborghini.php  = product 3
 cart.php = shopping cart page
 success.php = thank you page
 
