@@ -6,15 +6,15 @@
     <link href="images/favicon-32x32.png" rel="icon" type="image/png" />
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://sleipnir.shop/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://sleipnir.shop/css/bootstrap-theme.min.css">
 
     <!-- Jquery CSS -->
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://sleipnir.shop/css/jquery-ui.min.css">
 
     <!-- Slider CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://sleipnir.shop/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://sleipnir.shop/css/owl.theme.default.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
