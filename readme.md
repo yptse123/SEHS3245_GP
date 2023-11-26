@@ -22,5 +22,7 @@ include = include files
 bootstrap 3
 https://getbootstrap.com/docs/3.4/getting-started/
 
+jquery 1.12.4
+
 ------
 ** We use google cloud platform Lamp stack instance to host our website. With domain https://sleipnir.shop/, which also include ssl cert. And our github repo: https://github.com/yptse123/SEHS3245_GP **
