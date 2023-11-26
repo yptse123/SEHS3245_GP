@@ -26,8 +26,20 @@
     <footer>
         <div class="copyright col-sm-10 text-center">© <?php echo date("Y")?> Sleipnir. All Rights Reserved.</div>
         <div class="col-sm-2">
-            <div class="col-sm-4 social-icon text-center"><img class="icon" src="images/twitter.png" /></div>
-            <div class="col-sm-4 social-icon text-center"><img class="icon" src="images/facebook.png" /></div>
-            <div class="col-sm-4 social-icon text-center"><img class="icon" src="images/instagram.png" /></div>
+            <div class="col-sm-4 social-icon text-center">
+                <a target="_blank" src="https://twitter.com/">
+                    <img class="icon" src="images/twitter.png" />
+                </a>
+            </div>
+            <div class="col-sm-4 social-icon text-center">
+                <a target="_blank" src="https://www.facebook.com/">
+                    <img class="icon" src="images/facebook.png" />
+                </a>
+            </div>
+            <div class="col-sm-4 social-icon text-center">
+                <a target="_blank" src="https://www.instagram.com/">
+                    <img class="icon" src="images/instagram.png" />
+                </a>
+            </div>
         </div>
     </footer>
